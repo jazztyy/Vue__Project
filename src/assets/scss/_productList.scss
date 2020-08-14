@@ -1,0 +1,62 @@
+$gold : rgb(235, 155, 36);
+$black : rgb(0, 0, 0);
+
+.banner{
+    width: 100%;
+    height: 300px;
+    background: url(https://i.imgur.com/TqwmTV9.jpg) no-repeat center/cover;
+    margin-bottom: 30px;
+}
+
+.product__list{
+    display: flex;
+    flex-wrap: wrap;
+    li{
+        flex: 0 0 33.333%;
+        padding: 10px;
+    }
+    li>div{
+        box-shadow: 0 0 3px gray;
+        border-radius: 10px;
+        &:hover{
+            transform: scale(1.05);
+        }
+    }
+    img{
+        border-radius: 10px 10px 0 0;
+    }
+    h3{
+        font-size: 25px;
+    }
+    .product__btn{
+        display: flex;
+        button{
+            padding: 10px 0;
+            width: 50%;
+            font-size: 18px;
+        }
+        & :nth-child(1){
+            border-radius: 0 0 0 10px;
+            background: lighten($black, 20%);
+            color: white;
+            &:hover{
+            background: lighten($black, 1%);
+        }
+        }
+        & :nth-child(2){
+            border-radius: 0 0 10px 0;
+            background: lighten($gold, 5%);
+            color: white;
+            &:hover{
+            background: darken($gold, 5%);
+        }
+        }
+    }
+    
+    .product__title, .product__price{
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

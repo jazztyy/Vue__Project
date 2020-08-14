@@ -1,18 +1,28 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <layout-header></layout-header>
+    <layout-footer></layout-footer>
+    <router-view @loading='loading'/>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+
+import LayoutHeader from '../components/LayoutHeader'
+import LayoutFooter from '../components/LayoutFooter'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    LayoutFooter,
+    LayoutHeader
+  },
+  methods: {
+    loading (status) {
+      this.$emit('loading', status)
+    }
+  },
+  created () {
   }
 }
 </script>
